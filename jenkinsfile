@@ -2,17 +2,21 @@ pipeline{
     agent any
       stages{
         stage('pip install requirements'){
+           steps{
              echo 'pip install requirements'
              sh'''
                 pip3 install pandas
              '''
              echo 'Python pandas package installed'
+               }
              }
         stage('Run sample files'){
+           steps{
               echo 'Running sample file...'
               sh'''
                   python sample.py
               '''
+               }
              }
         }
       post{
