@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+      stages{
+        stage('pip install requirements'){
+             echo 'pip install requirements'
+             sh'''
+                pip3 install pandas
+             '''
+             echo 'Python pandas package installed'
+             }
+        stage('Run sample files'){
+              echo 'Running sample file...'
+              sh'''
+                  python sample.py
+              '''
+             }
+        }
+      post{
+         always{
+             echo ' I will get executed always'
+              }
+      }
+}
