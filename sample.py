@@ -18,3 +18,7 @@ print("Complete new changes")
 Print("new")
 
 print("latest")
+
+print("complete")
+
+print("completed")
